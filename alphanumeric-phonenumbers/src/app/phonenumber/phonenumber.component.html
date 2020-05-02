@@ -1,0 +1,26 @@
+<div class="card-container">
+  <div class="card card-large">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Phone Number:</mat-label>
+      <input matInput placeholder="555-555-1212"
+             (keyup)="onKey($event)"
+             [formControl]="phoneFormControl"
+             [errorStateMatcher]="matcher"
+      >
+
+      <mat-error>
+        Enter a 7 or 10 digit number
+      </mat-error>
+
+    </mat-form-field>
+
+  </div>
+
+
+  <app-phonelist [pageSize]="pageSize"
+                 [results]="results"
+                 (handlePage)="handlePageChange($event)"
+  ></app-phonelist>
+
+</div>

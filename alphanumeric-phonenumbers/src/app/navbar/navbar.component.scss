@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+.section {
+  display: table;
+  margin: 8px;
+}
+
+.navbar-button-row {
+  display: table-cell;
+}
+
+.button-padding {
+  margin: 15px;
+}
+

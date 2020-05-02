@@ -1,0 +1,19 @@
+<div *ngIf="results.pageInfo.totalResults>0">
+
+  <mat-label class="label"> {{ results.pageInfo.totalResults }} Alphanumeric Combinations</mat-label>
+
+  <mat-paginator
+    [pageIndex]="results.pageInfo.pageNumber"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [length]="results.pageInfo.totalResults"
+    (page)="changePageRequest($event)"
+  >
+  </mat-paginator>
+
+  <mat-list>
+    <mat-list-item *ngFor="let phone of results.phoneNumbers">
+      <span class="custom-phoneresult">  {{ formatNumber(phone) }}</span>
+    </mat-list-item>
+  </mat-list>
+</div>
